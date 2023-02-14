@@ -23,7 +23,7 @@ import java.util.List;
 
 @Service
 public class ServicesImpl implements Services{
-    @Value("${path}") private String path;
+    @Value("${file_path}") private String path;
     @Value("${API_KEY}") private String API_KEY;
     @Override
     public ResponseToStore sendRequest(UserRequest userRequest) throws IOException, InterruptedException, URISyntaxException {
@@ -31,7 +31,6 @@ public class ServicesImpl implements Services{
         apiRequest.setPrompt(userRequest.getPrompt());
         Gson gson = new Gson();
         String jsonRequest = gson.toJson(apiRequest);
-        System.out.println(jsonRequest);
         HttpRequest httpRequest = HttpRequest.newBuilder()
                 .uri(new URI("https://api.openai.com/v1/completions"))
                 .header("Authorization","Bearer "+API_KEY)

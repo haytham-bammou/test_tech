@@ -5,7 +5,7 @@ services:
     ports:
       - 8080:8080
     environment:
-      - path=/usr/app/data/output.json
+      - file_path=/usr/app/data/output.json
       - API_KEY=${API_KEY}
     volumes:
       - file:/usr/app/data

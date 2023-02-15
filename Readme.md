@@ -2,7 +2,7 @@
 premierement on doit donner deux variable d'envirenement file_path et API_KEY
 file_path : le path du fichier json de stockage
 API_KEY : la clé d'autorisation de chat gpt
-j ai cree un REST API qui pour route /api/request prend une requete post 
+j ai cree un REST API qui a pour route /api/request prend une requete post avec cette exemple de body
 {
     "prompt" : "la question ?"
 } 
@@ -18,8 +18,8 @@ j ai utilisé jenkins avec les étapes suivantes
 2- build de l'image et push dans mon repo sur docker hub 
 3- cp docker-compose et server.sh dans le serveur de deploiment sur le cloud (j'ai utilisé digital oceans)
 4- execution de server.sh dans le serveur
-ce script va definir la variable d'envirenment prite de jenkins credentials et la setter sur le serveur
-puis remplacer une variable API_KEY dans le fichier docker compose par celle setter sur l env du server 
+ce script va definir la variable d'envirenement depuis jenkins credentials et la mettre en variable d'env du serveur
+puis remplacer une variable API_KEY dans le fichier docker compose par celle  l env du server 
 puis lancer le contenaire 
 
 
